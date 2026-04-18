@@ -10,4 +10,4 @@ Bunch of small additions to for myself as a WoW AddOn.
 - Auto sell and repair
 - Automatic zoom settings if 1440p or 1080p.
 
-| This will be updated whenever I find something I need to add |
+\| This will be updated whenever I find something I need to add |
