@@ -1,0 +1,15 @@
+## Interface: 120005, 120001
+## Title: |cff00ffc8Aurs QoL|r
+## Notes: A small bundle of quality of life automation
+## Author: Aurs
+## Version: 1.0
+## IconTexture: Interface\AddOns\Aurstomation\Media\icon.png
+## SavedVariables: AursQoLDB, potDB
+
+Core.lua
+Modules/AutoRepair.lua
+Modules/AutoSell.lua
+Modules/AutoQueue.lua
+Modules/UIScale.lua
+Modules/Misc.lua
+Modules/Consume.lua
