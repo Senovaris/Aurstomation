@@ -1,20 +1,24 @@
 potDB = potDB or {}
 
 local potionID = {
+  245916, -- Fleeting Mana pot r2
   241301, -- Lightfused Mana pot r1
   241300, -- Lightfused Mana Pot r2
 }
 
+local rankAtlas = {
+  [2] = "Professions-ChatIcon-Quality-12-Tier1",
+  [1] = "Professions-ChatIcon-Quality-12-Tier2",
+}
+
 local function potionInBag()
-  for bagID = 0, 4 do
-    local numSlots = C_Container.GetContainerNumSlots(bagID)
-    for slotID = 1, numSlots do
-      local itemID = C_Container.GetContainerItemID(bagID, slotID)
-      if itemID then
-        for _, potID in ipairs(potionID) do
-          if itemID == potID then
-            return bagID, slotID
-          end
+  for _, potID in ipairs(potionID) do
+    for bagID = 0, 4 do
+      local numSlots = C_Container.GetContainerNumSlots(bagID)
+      for slotID = 1, numSlots do
+        local itemID = C_Container.GetContainerItemID(bagID, slotID)
+        if itemID == potID then
+          return bagID, slotID, potID
         end
       end
     end
@@ -25,7 +29,6 @@ end
 local hPotionID = {
   241305, -- Health pot r1
   241304, -- Health pot r2
-  258138, -- Silvermoon Pot 50% health
 }
 
 local function hPotionInBag()
@@ -69,7 +72,7 @@ local function hasHealthStone()
 end
 
 local function UpdatePotionFrame()
-  local bagID, slotID = potionInBag()
+  local bagID, slotID, itemID = potionInBag()
   if bagID and slotID then
     local info = C_Container.GetContainerItemInfo(bagID, slotID)
     if info and info.iconFileID then
@@ -85,6 +88,13 @@ local function UpdatePotionFrame()
         pot.count:Show()
       else
         pot.count:Hide()
+      end
+      local atlas = rankAtlas[info.quality]
+      if atlas then
+        pot.rank:SetAtlas(atlas)
+        pot.rank:Show()
+      else
+        pot.rank:Hide()
       end
       pot:Show()
       return
@@ -110,6 +120,13 @@ local function UpdateHealthPotionFrame()
         hPot.count:Show()
       else
         hPot.count:Hide()
+      end
+      local atlas = rankAtlas[info.quality]
+      if atlas then
+        hPot.rank:SetAtlas(atlas)
+        hPot.rank:Show()
+      else
+        hPot.rank:Hide()
       end
       hPot:Show()
       return
@@ -189,6 +206,10 @@ pot.cooldown:SetAllPoints()
 pot.count = pot:CreateFontString(nil, "OVERLAY", "NumberFontNormalLarge")
 pot.count:SetPoint("BOTTOMRIGHT", pot, "BOTTOMRIGHT", 0, 2)
 pot.count:Hide()
+pot.rank = pot:CreateTexture(nil, "OVERLAY")
+pot.rank:SetSize(22, 22)
+pot.rank:SetPoint("TOPLEFT", pot, "TOPLEFT", -6, 6)
+pot.rank:Hide()
 
 hPot = CreateFrame("Frame", nil, potionFrame)
 hPot:SetSize(40, 40)
@@ -200,6 +221,11 @@ hPot.cooldown:SetAllPoints()
 hPot.count = hPot:CreateFontString(nil, "OVERLAY", "NumberFontNormalLarge")
 hPot.count:SetPoint("BOTTOMRIGHT", hPot, "BOTTOMRIGHT", 0, 2)
 hPot.count:Hide()
+hPot.rank = hPot:CreateTexture(nil, "OVERLAY")
+hPot.rank:SetSize(22, 22)
+hPot.rank:SetPoint("TOPLEFT", hPot, "TOPLEFT", -6, 6)
+hPot.rank:Hide()
+
 
 hStone = CreateFrame("Frame", nil, potionFrame)
 hStone:SetSize(40, 40)
