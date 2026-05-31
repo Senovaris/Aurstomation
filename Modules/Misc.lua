@@ -5,7 +5,7 @@ f:RegisterEvent("CINEMATIC_START")
 f:SetScript("OnEvent", function(_, event)
   if event == "PLAY_MOVIE" then
     if MovieFrame and MovieFrame:IsShown() then
-      MovieFrame_StopMovie()
+      StopMovie()
     end
   elseif event == "CINEMATIC_START" then
     if CinematicFrame_CancelCinematic then
