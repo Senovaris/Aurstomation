@@ -75,6 +75,7 @@ end
 local powerPotionID = {
   { id = 245898, role = "HEALER" },
   { id = 241293, role = "DAMAGER" }, -- Draught of Rampant Abandon(Feral)
+  { id = 241309, role = "DAMAGER" },
 }
 
 local function powerPotionInBag()
