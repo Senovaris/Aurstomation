@@ -14,3 +14,4 @@ Modules/UIScale.lua
 Modules/Misc.lua
 Modules/Consume.lua
 Modules/petReminder.lua
+Modules/hideTargetBuffs.lua
