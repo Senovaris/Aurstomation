@@ -30,6 +30,8 @@ end
 local hPotionID = {
 	241305, -- Health pot r1
 	241304, -- Health pot r2
+	271884,
+	271883,
 }
 
 local function hPotionInBag()
