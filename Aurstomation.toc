@@ -1,5 +1,5 @@
 ## Interface: 120007, 120005
-## Title: |cff00ffc8Aurs QoL|r
+## Title: |cffff6000Aurstomation|r
 ## Notes: A small bundle of quality of life automation
 ## Author: Aurs
 ## Version: 1.0
@@ -13,5 +13,5 @@ Modules/AutoQueue.lua
 Modules/UIScale.lua
 Modules/Misc.lua
 Modules/Consume.lua
+Modules/hideTargetBuffs.lua
 Modules/petReminder.lua
-

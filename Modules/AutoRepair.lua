@@ -8,10 +8,10 @@ local function OnMerchantShow()
 			local canUseGuild = CanGuildBankRepair()
 			if AursQoLDB.useGuilDRepair and canUseGuild then
 				RepairAllItems(true)
-				print("Auto repaired for " .. GetCoinTextureString(cost) .. " (using guild funds)")
+				print("Auto repaired for " .. C_CurrencyInfo.GetCoinTextureString(cost) .. " (using guild funds)")
 			else
 				RepairAllItems()
-				print("Auto repaired for " .. GetCoinTextureString(cost))
+				print("Auto repaired for " .. C_CurrencyInfo.GetCoinTextureString(cost))
 			end
 		else
 			print("No Repairs needed")

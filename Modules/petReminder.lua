@@ -40,8 +40,8 @@ local function GetReminderStatus()
 		return false
 	end
 
-	local specIndex = GetSpecialization()
-	local specID = specIndex and select(1, GetSpecializationInfo(specIndex))
+	local specIndex = C_SpecializationInfo.GetSpecialization()
+	local specID = specIndex and select(1, C_SpecializationInfo.GetSpecializationInfo(specIndex))
 	if class == "DEATHKNIGHT" and specID ~= 252 then
 		return false
 	end
