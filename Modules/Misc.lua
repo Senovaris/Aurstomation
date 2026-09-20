@@ -1,20 +1,4 @@
----- Cancels cinematics and movies if possible
---local f = CreateFrame("Frame")
---f:RegisterEvent("PLAY_MOVIE")
---f:RegisterEvent("CINEMATIC_START")
---f:SetScript("OnEvent", function(_, event)
---  if event == "PLAY_MOVIE" then
---    if MovieFrame and MovieFrame:IsShown() then
---      StopMovie()
---    end
---  elseif event == "CINEMATIC_START" then
---    if CinematicFrame_CancelCinematic then
---      CinematicFrame_CancelCinematic()
---    end
---  end
---end)
-
--- Sets difficulty to Mythic per automation
+-- Sets difficulty to Mythic automatically
 local autoDifficulty = CreateFrame("Frame")
 autoDifficulty:RegisterEvent("PLAYER_LOGIN")
 autoDifficulty:RegisterEvent("PLAYER_ENTERING_WORLD")

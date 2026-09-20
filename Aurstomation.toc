@@ -13,5 +13,4 @@ Modules/AutoQueue.lua
 Modules/UIScale.lua
 Modules/Misc.lua
 Modules/Consume.lua
-Modules/hideTargetBuffs.lua
 Modules/petReminder.lua
