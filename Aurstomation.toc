@@ -12,5 +12,4 @@ Modules/AutoSell.lua
 Modules/AutoQueue.lua
 Modules/UIScale.lua
 Modules/Misc.lua
-Modules/Consume.lua
 Modules/petReminder.lua

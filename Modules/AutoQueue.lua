@@ -3,7 +3,6 @@ local function OnRoleCheckShow()
 		return
 	end
 	CompleteLFGRoleCheck(true)
-	print("AutoQueue: Rolecheck Accepted")
 end
 
 local frame = CreateFrame("Frame")
