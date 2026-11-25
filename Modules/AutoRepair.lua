@@ -6,7 +6,7 @@ local function OnMerchantShow()
 		local cost = GetRepairAllCost()
 		if cost > 0 then
 			RepairAllItems()
-			print("Auto repaired for " .. GetCoinTextureString(cost))
+			print("Auto repaired for " .. C_CurrencyInfo.GetCoinTextureString(cost))
 		end
 	else
 		print("No Repairs needed")

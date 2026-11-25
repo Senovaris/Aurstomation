@@ -12,4 +12,4 @@ Modules/AutoSell.lua
 Modules/AutoQueue.lua
 Modules/UIScale.lua
 Modules/Misc.lua
-Modules/petReminder.lua
+Modules/hideBagBar.lua
